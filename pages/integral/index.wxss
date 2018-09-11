@@ -1,0 +1,39 @@
+page{
+	background:white;
+}
+.space{
+	height:0.6rem;
+	background:#eee;
+}
+.integralSum{
+	font-size:0.9rem;
+	color:#666;
+	padding:0.6rem 0.8rem;
+}
+.integralSum text{
+	font-weight: 600;
+}
+.integralDetail{
+	border-top:1px solid #ddd;
+}
+.integralList{
+	padding:0.4rem 0.8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom:1px solid #eee;
+	font-size:0.95rem;
+	color:#666;
+}
+.integralAddress{
+	font-weight: 600;
+	margin-bottom:0.3rem;
+}
+.integralNumb{
+	font-weight: 600;
+	color:#009944;
+}
+.integralDate{
+	font-size:0.8rem;
+	color:#929292;
+}

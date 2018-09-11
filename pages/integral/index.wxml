@@ -1,0 +1,19 @@
+<view class="container">
+	<view class = "space"></view>
+	<view class="integralSum">当前积分 <text>{{ count_score == 0 ? 0 : count_score }}</text> 分</view>
+	<view class = "space"></view>
+	<view class="integralDetail">
+		<block wx:for = "{{ list }}" wx:key = "index">
+			<view class="integralList">
+				<view class="integralWrap">
+					<view class="integralAddress">{{ item.start_address[1] == "县" ? item.start_address[2] : item.start_address[1] }} — {{ item.end_address[1] == "县" ? item.end_address[2] : item.end_address[1] }}</view>
+					<view class="integralDate">{{ item.create_time_format }}</view>
+				</view>
+				<view class="integralNumb">+{{ item.score }}</view>
+			</view>
+		</block>
+		<!-- <block wx:if = "{{ list.length == 0 }}">
+			<include src="../common/empty.wxml" />
+		</block> -->
+	</view>
+</view>

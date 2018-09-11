@@ -1,0 +1,65 @@
+.money{
+	margin-top:0.6rem;
+	padding:0 0.8rem;
+	background:white;
+	font-size:0.95rem;
+	color:#666;
+}
+.moneyTitle,.sumMoney,.payMoney{
+	padding:0.5rem 0;
+}
+.payMoney{
+	border-bottom:1px solid #eee;
+	vertical-align: middle;
+}
+.sumMoney text{
+	margin-left:0.5rem;
+}
+.payMoney input{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.discount{
+	margin-top:0.6rem;
+	padding:0 0.8rem;
+	font-size:0.95rem;
+	color:#666;
+}
+.discountTitle{
+	padding:0.6rem 0;
+}
+.discountDetail{
+	display: flex;
+	justify-content: space-between;
+}
+.salesWrap{
+	width:49%;
+	position:relative;
+	color:white;
+}
+.salesImg{
+	width:100%;
+	height:4.5rem;
+}
+.salesRule{
+	position: absolute;
+	top:0; bottom:0;
+	right:0; left:0;
+	text-align: center;
+	margin-top:0.9rem;
+}
+
+.saveBtn{
+	padding:2rem 0.8rem;
+}
+.saveBtn view{
+	width:100%;
+	margin:0 auto;
+	background:#009944;
+	color:white;
+	font-size:0.95rem;
+	border-radius:0.2rem;
+	padding:0.6rem 0;
+	text-align: center;
+}

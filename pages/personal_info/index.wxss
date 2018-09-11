@@ -1,0 +1,49 @@
+.userImg{
+	background: white ;
+	padding:1rem 0.8rem;
+	margin-bottom:0.6rem;
+}
+.userImg view{
+	width:3.5rem;
+	height:3.5rem;
+	border-radius:50%;
+	overflow: hidden;
+}
+.userInfo{
+	background:white;
+	padding:0 0.8rem;
+	box-sizing:border-box;
+}
+.inputCont{
+	font-size:0.95rem;
+	color:#333;
+	border-bottom:1px solid #eee;
+	padding:0.8rem 0;
+	display: flex;
+}
+.inputCont>view:first-child{
+	width:25%;
+}
+.infoInput{
+	width:70%;
+	color:#666;
+}
+.inputName{
+	color:#999;
+}
+.infoInput input{
+	width:100%;
+}
+.saveBtn{
+	padding:2rem 0.8rem;
+}
+.saveBtn view{
+	width:100%;
+	margin:0 auto;
+	background:#009944;
+	color:white;
+	font-size:0.95rem;
+	border-radius:0.2rem;
+	padding:0.8rem 0;
+	text-align: center;
+}

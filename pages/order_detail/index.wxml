@@ -1,0 +1,82 @@
+<view class="container">
+	<view class="orderStatus">
+		<view class="title">订单状态</view>
+		<!-- <view class="content" wx:if = "{{ item.order_status == 5 }}">{{ item.is_car ? item.order_car_status_name : item.order_cargo_status_name }}</view> -->
+		<view class="content" >{{ item.order_status_name }}</view>
+	</view>
+	<view class="goodsInfo">
+		<view class="title">货主信息</view>
+		<view class="content">
+			<view class="contentWrap">
+				<view class="">姓名</view>
+				<view class="">{{ item.cargo_nickname }}</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">联系方式</view>
+				<view class="">{{ item.cargo_user_phone }}</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">起点</view>
+				<view class="">{{ item.start_address[0] }}{{ item.start_address[1] }}</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">终点</view>
+				<view class="">{{ item.end_address[0] }}{{ item.end_address[1] }}</view>
+			</view>
+
+			<view class="contentWrap">
+				<view class="">货物名称</view>
+				<view class="">{{ item.cargo_name }}</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">货物重量</view>
+				<view class="">{{ item.cargo_weight }}吨</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">运输经费</view>
+				<view class="">{{ item.transport_cost }}元/吨</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">装货日期</view>
+				<view class="">{{ item.loadcar_time_format[0] }}</view>
+			</view>
+		</view>
+	</view>
+	<view class="carInfo">
+		<view class="title">车主信息</view>
+		<view class="content">
+			<view class="contentWrap">
+				<view class="">姓名</view>
+				<view class="">{{ item.car_nickname }}</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">联系方式</view>
+				<view class="">{{ item.car_user_phone }}</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">车辆长度</view>
+				<view class="">{{ item.car_length }}</view>
+			</view>
+			<view class="contentWrap">
+				<view class="">车辆类型</view>
+				<view class="">{{ item.car_type }}</view>
+			</view>
+		</view>
+	</view>
+	<view class = "confirm">
+		<block wx:if = "{{ item.is_cargo && item.order_status == 2 }}">
+			<view class = "confirmBtnTwo" >
+				<view class="confirmB" data-active = "1" bindtap = "toCategory">{{ statusValue.name[0] }}</view>
+				<view class="cancel" data-active = "2" bindtap = "toCategory">{{ statusValue.name[1] }}</view>
+			</view>
+		</block>
+		<block wx:else >
+			<block wx:if = "{{ item.is_car }}" >
+				<view class = "confirmBtn {{ item.order_status == 3 || item.order_status == 6 || item.order_status == 7 ? 'bgGray' : '' }}" data-mold="{{ item.is_car }}" data-state="{{ item.order_status }}" bindtap = "{{ item.order_status == 3 || item.order_status == 6 || item.order_status == 7 ? '' : 'toCategory' }}">{{ statusValue.name }}{{ item.order_status == 1 ? "(信息费用"+item.msg_money+"元)" : "" }}</view><!-- {{ item.order_status == 3 ? 'bgGray' : item.order_status == 6 ? 'bgGray' : item.order_status == 7 || (item.order_status == 5 && item.car_comment == 2) ? 'bgGray' : '' }}   -->
+			</block>
+			<block wx:else >
+				<view class = "confirmBtn {{ item.order_status == 4 || item.order_status == 6 || item.order_status == 7 ? 'bgGray' : '' }}" data-mold="{{ item.is_cargo }}" data-state="{{ item.order_status }}" bindtap = "{{ item.order_status == 4 || item.order_status == 6 || item.order_status == 7 ? '' : 'toCategory' }}">{{ statusValue.name }}</view><!-- {{ item.order_status == 4 ? 'bgGray' : item.order_status == 6 ? 'bgGray' : item.order_status == 7 || (item.order_status == 5 && item.cargo_comment == 2) ? 'bgGray' : '' }} -->
+			</block>
+		</block>
+	</view>
+</view>

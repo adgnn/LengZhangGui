@@ -1,0 +1,120 @@
+<!--pages/Personal/index.wxml-->
+<view>
+	<swiper autoplay="{{autoplay}}" duration="{{duration}}" indicator-dots="{{indicatorDots}}" interval="{{interval}}">
+		<block wx:for="{{ banner_list }}" wx:key="index">
+			<swiper-item>
+				<image mode = "aspectFill" class="slide-image" height="100%" src="{{ item.cover_path }}" width="100%"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="user_header">
+		<view class="user_img" bindtap = "navigateTo" data-url = "/pages/personal_info/index">
+			<image mode = "aspectFill" src="{{ user_info.user_image }}"></image>
+		</view>
+		<view class="user_name">
+			<view class="user_name_info">
+				{{ user_info.nickname }}
+			</view>
+			<view class="user_balance_info">
+				<view>
+					余额
+				</view>
+				<view class="balance">
+					￥  {{ user_info.account_balance }}
+				</view>
+			</view>
+		</view>
+		<view class="authStatus {{ user_info.card_status == 1 ? 'colorGreen' : '' }}">{{ user_info.card_status == 0 ? "审核中" : user_info.card_status == 1 ? "已认证" : "未认证" }}</view>
+	</view>
+	<view class="car_info">
+		<view class="car_item" bindtap = "navigateTo" data-url = "/pages/Carresourse/index">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_01.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+				车源登记
+			</view>
+		</view>
+
+		<view class="car_item" bindtap="navigateTo" data-url = "/pages/resourse/index">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_02.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+			   货源登记
+			</view>
+		</view>
+
+		<view class="car_item" bindtap = "navigateTo" data-url = "/pages/orderDetails/index">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_03.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+				成交记录
+			</view>
+		</view>
+
+		<view class="car_item" bindtap = "navigateTo" data-url = "/pages/balance/index">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_04.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+				余额充值
+			</view>
+		</view>
+
+		<view class="car_item" wx:if = "{{ StartMemberApprove == 1 }}" bindtap = "navigateTo" data-url = "/pages/upload_img/index?id=1">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_05.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+			   会员认证
+			</view>
+		</view>
+
+		<view class="car_item" bindtap = "navigateTo" data-url = "/pages/share/index">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_06.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+				分享转发
+			</view>
+		</view>
+
+		<view class="car_item" bindtap = "navigateTo" data-url = "/pages/user_rating/index">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_07.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+				用户评价
+			</view>
+		</view>
+
+		<view class="car_item" bindtap = "{{ start_score_record == 1 ? 'navigateTo' : '' }}" data-url = "/pages/integral/index">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_08.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+				积分记录
+			</view>
+		</view>
+
+		<view class="car_item" bindtap = "makePhone">
+			<view class="car_login_img">
+				<image mode = "aspectFit" src="../images/userList_09.png">
+				</image>
+			</view>
+			<view class="car_login_text">
+				联系客服
+			</view>
+		</view>
+	</view>
+</view>

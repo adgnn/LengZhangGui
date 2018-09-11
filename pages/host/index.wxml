@@ -1,0 +1,111 @@
+<view class="goods_details">
+	<view class="goods_img" style="width:90px;height:92px;">
+		<image mode = "aspectFill" src="{{ cargo_image }}"></image>
+	</view>
+	<view class="user_star">
+		用户评价
+		<view class="starWrap">
+			<block wx:for="{{ item.star_level.starNumber }}" wx:key="index">
+				<view>
+					<image mode = "aspectFit" src="../images/star_01.png"></image>
+				</view>
+			</block>
+			<block wx:for="{{ 5-item.star_level.starNumber }}" wx:key="index">
+				<view>
+					<image mode = "aspectFit" src="../images/star_02.png"></image>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>
+<view class="goods_info_title">
+	<view>
+		货物信息
+	</view>
+</view>
+<view class="goods_info">
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			起点
+		</view>
+		<view class="goods_info_right">
+			{{ item.start_province }}{{ item.start_city }}
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			终点
+		</view>
+		<view class="goods_info_right">
+			{{ item.end_province }}{{ item.end_city }}
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			货物名称
+		</view>
+		<view class="goods_info_right">
+			{{ item.cargo_name }}
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			车辆要求
+		</view>
+		<view class="goods_info_right">
+			{{ item.car_length }}   {{ item.car_type }}
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			是否拼车
+		</view>
+		<view class="goods_info_right">
+			{{ item.is_spellcar_name }}
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			货物重量
+		</view>
+		<view class="goods_info_right">
+			{{ item.cargo_weight }}吨
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			运输费用
+		</view>
+		<view class="goods_info_right">
+			{{ item.transport_cost }}元/吨
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			装车时间
+		</view>
+		<view class="goods_info_right">
+			{{ item.loadcar_time }}
+		</view>
+	</view>
+	<view class="goods_info_wrap">
+		<view class="goods_info_left">
+			备注信息
+		</view>
+		<view></view>
+		<!-- <textarea class="goods_info_right remark">
+			11111111111111
+		</textarea> -->
+	</view>
+	<view class="goods_info_wrap">
+		{{ item.remark }}
+	</view>
+</view>
+<view class = "payBtn">
+	<button bindtap = "payment"><!-- wx:if = "{{ start_cargomoeny != 0 }}" -->
+		付款联系(信息费用{{ item.msg_money }}元)
+	</button>
+	<!-- <button wx:else bindtap = "location" data-url = "/pages/contact_head/index?user_id={{ item.user_id }}">
+		立刻联系
+	</button> -->
+</view>

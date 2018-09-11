@@ -1,0 +1,46 @@
+<!--pages/user_rating/index.wxml-->
+<view class="findCar">
+	<block wx:for="{{ list }}" wx:key="index">
+		<view class="user_rating_cont_wrap">
+			<view class="findCar_cont">
+				<view class="findCar_cont_Item">
+					<image mode = "aspectFill" src="{{ item.is_car ? item.cargo_user_image : item.car_user_image }}" ></image>
+				</view>
+				<view class="findCar_cont_Item Item2">
+					<view class="custom_name">
+						{{ item.is_car ? item.cargo_nickname : item.car_nickname }}
+					</view>
+					<view class="route">
+						{{ item.start_address[1] == "县" ? item.start_address[2] : item.start_address[1] }}
+						<image src="../images/arror_02.png" style="width:27px;height:5px;">
+						</image>
+						{{ item.end_address[1] == "县" ? item.end_address[2] : item.end_address[1] }}
+					</view>
+					<view class="findCar_Item_weight">
+						<view>
+							交易金额
+						</view>
+						<view class="red">
+							￥{{ item.order_money }}
+						</view>
+					</view>
+				</view>
+				<view bindtap="" class="findCar_cont_Item Item3">
+					<view class="order_details_time">
+						{{ item.create_time_format[0] }}
+					</view>
+					<view class="contact_p no_border">
+					   {{ item.order_status_name }}
+					</view>
+				</view>
+			</view>
+			<view class="user_review">
+				<view class='orange' bindtap = "navigateTo" data-url = "/pages/evaluate/index?by_comment_user_id={{ item.is_car ? item.cargo_user_id : item.car_user_id }}&order_id={{ item.id }}">评价</view> 
+			</view>
+		</view>
+	</block>
+	<!-- <block wx:if = "{{ list.length == 0 }}">
+		<include src="../common/empty.wxml" />
+	</block> -->
+</view>
+

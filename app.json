@@ -1,0 +1,50 @@
+{
+	"pages": [
+	  	"pages/index/index",
+		"pages/Personal/index",
+		"pages/personal_info/index",
+		"pages/orderDetails/index",
+		"pages/upload_img/index",
+		"pages/evaluate/index",
+		"pages/share/index",
+		"pages/balance/index",
+		"pages/contact_head/index",
+		"pages/user_rating/index",
+		"pages/integral/index",
+		"pages/Carresourse/index",
+		"pages/resourse/index",
+		"pages/order_detail/index",
+		"pages/findCar/index",
+		"pages/findGoods/index",
+		"pages/host/index"
+	],
+	"window": { 
+		"navigationBarBackgroundColor" : "#009944" ,
+		"navigationBarTitleText": "首页" ,
+		"enablePullDownRefresh" : true 
+	},
+	"tabBar": {
+		"font-size":"2rem",
+		"position":"bottom",
+		"borderStyle": "black",
+		"list": [
+				{
+					"pagePath": "pages/findCar/index",
+					"text": "我要找车",
+					"iconPath": "pages/images/navBar_04.png",
+					"selectedIconPath": "pages/images/navBar_04.png"
+				},
+				{
+					"pagePath": "pages/findGoods/index",
+					"text": "我要找货",
+					"iconPath": "pages/images/navBar_05.png",
+					"selectedIconPath": "pages/images/navBar_05.png"
+				},
+				{
+					"pagePath": "pages/Personal/index",
+					"text": "会员中心",
+					"iconPath": "pages/images/navBar_06.png",
+					"selectedIconPath": "pages/images/navBar_06.png"
+				}]
+	}
+}

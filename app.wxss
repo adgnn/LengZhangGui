@@ -1,0 +1,320 @@
+@import "weui.wxss";
+page{width:100%;display: block; background:#eee;font-family: '微软雅黑';}
+image{width:100%;height:100%;}
+.container {
+	width: 100%;
+	font-size: 14px;
+}
+.bg-white {
+	background: white;
+}
+.bg-blue {
+	background: #ff4c00;
+}
+.bg-gray {
+	background: #ededed;
+}
+.padding-top {
+	padding-top: .5rem;
+}
+.margin-top {
+	margin-top: .5rem;
+}
+.padding {
+	padding: .7rem 1rem;
+}
+.weui-success {
+	background: #62c43b;
+}
+.weui-default {
+	background: gray;
+}
+.flex-wrp {
+	flex-direction: row;
+	display: flex;
+}
+.flex-item {}
+.icon-type {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #666666;
+	display: inline-flex;
+	margin-left: 2px;
+	padding-top: 1px;
+}
+/* list 模块 */
+
+.list {
+	background: white;
+}
+.list .list-thumb {
+	width: 100px;
+	height: 100px;
+}
+.list .list-body {
+	margin-left: 1rem;
+	width: calc(100% - 100px);
+}
+.weui-media-box__desc {
+	font-size: 12px;
+	padding: .3rem 0rem;
+}
+.list-body .weui-media-box__desc .list-body-more {
+	width: 50%;
+}
+.list-body .weui-media-box__desc .list-body-more:first-child {
+	width: 20%;
+}
+.weui-badge {
+	padding: .3em .5em .4em .5em;
+}
+.btn {
+	padding: .5rem 1rem;
+	background: #cccccc;
+	border-radius: 4px;
+	color: white;
+	text-align: center;
+}
+.btn-primary {
+	background: #ff4c00;
+}
+.btn-default {
+	background: #ffffff;
+	color: #333;
+}
+.btn-orange {
+	background: #f2a51e;
+}
+.btn-danger {
+	background: #f91515;
+}
+.btn-disabled {
+	background: #999;
+}
+.no-bgcolor {
+	background: none;
+}
+.no-padding {
+	padding: 0px;
+}
+/*menu*/
+
+.menu {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	padding: .5rem 0;
+}
+.border-radius-normal {
+	border-radius: 0px;
+}
+.public-sex .flex-wrp {
+	width: 6rem;
+	height: 2rem;
+	line-height: 2rem;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+}
+.public-sex .flex-item {
+	width: 50%;
+	height: 100%;
+	text-align: center;
+}
+.public-sex .flex-item.active {
+	background: #ff4c00;
+	color: white;
+	border-radius: 10px;
+}
+.public-sex .flex-item:first-child.active {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.public-sex .flex-item:last-child.active {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.load-more {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+	padding: .5rem 0;
+}
+.load-more icon {
+	margin-right: .3rem
+}
+.load-more text {
+	color: #999
+}
+button[open-type='contact'] {
+	padding: 0px;
+	font-size: 13px;
+	background: none;
+	border-radius: 0;
+	line-height: normal;
+	color: #333333;
+}
+button[open-type='contact']:after {
+	border: none;
+}
+button[open-type='getPhoneNumber'] {
+	background: none;
+	border-radius: 0;
+	line-height: normal;
+}
+button[open-type='getPhoneNumber']:after {
+	border: none;
+}
+
+/*弹窗*/
+
+.auth.alertW {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+.auth .alertS {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	right: 0;
+	margin: auto 3rem;
+	background: white;
+	border-radius: 0.5rem;
+}
+.auth .alertMsg {
+	/*padding:0.8rem;*/
+	padding-bottom: 0px;
+	padding-top: 0px;
+	line-height: 2rem;
+	font-size: .9rem;
+}
+.auth .alertFont {
+	display: inline-block;
+	color: #555;
+	width: 30%;
+}
+.auth .alertMsg>view:first-child, .auth .alertMsg>view:nth-child(2) {
+	border-bottom: 1px solid #f1f1f1;
+	text-align: center;
+	padding: .5rem .7rem;
+}
+.auth .alertMsg>view:last-child {
+	/*background:#f6f6f6;*/
+	border-radius: 0.3rem;
+	padding: .7rem .7rem;
+	/*height:4rem;*/
+	/*line-height:1.4rem;*/
+	color: #999;
+	/*margin-bottom:0.5rem;*/
+}
+.auth .alertBut {
+	/*border-top:1px solid #f1f1f1;*/
+	/*line-height:1.6rem;*/
+	text-align: center;
+	color: #6ab944;
+	padding: 0.7rem 0;
+	font-size: 0.8rem;
+}
+.auth .not-vip {
+	top: 27%;
+	margin: 0 3rem;
+}
+.auth .not-vip-icon {
+	width: 5rem;
+	height: 5rem;
+	margin: 1rem auto;
+	/*padding:1rem 0;*/
+}
+.auth .not-vip .alertMsg view {
+	border: none;
+	padding: 0px;
+}
+.not-vip-title {
+	font-size: .8rem;
+	color: #333333;
+}
+.auth .not-vip .alertMsg .not-vip-desc {
+	color: #999999;
+	font-size: .7rem;
+	text-align: center;
+	padding: .7rem 0;
+}
+.auth .not-vip .alertMsg {
+	line-height: normal;
+	font-size: normal;
+}
+.not-vip-button {
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+}
+.not-vip-button .btn {
+	padding: 0px;
+	line-height: normal;
+	padding: .5rem 0rem;
+	font-size: .7rem;
+	width: 49%;
+}
+.empty {
+	width: 100%;
+	margin-top: 40%;
+}
+.empty-icon {
+	width: 9rem;
+	height: 8rem;
+	margin: 0 auto;
+}
+.empty-tips {
+	width: 100%;
+}
+.empty-tips .btn {
+	width: 80%;
+	padding: 0 2rem;
+	margin: 0 auto;
+	margin-top: 4rem;
+}
+.empty-tips .btn.btn-info {
+	background: #ff4c00;
+}
+.empty-tip {
+	color: #666;
+	text-align: center;
+	padding: .5rem 0;
+	font-size: .7rem;
+}
+.weui-form-tips {
+	color: #999;
+	font-size: .7rem;
+	padding: 10px 15px;
+}
+
+.gary{
+	color:#a3a3a3;
+}
+.orange{
+	color:#ff970b;
+}
+.red{
+	color:#ff424d;
+}
+.green{
+	color:#44ab05;
+}
+.text-overflow{
+	width:100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+

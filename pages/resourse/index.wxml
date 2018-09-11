@@ -1,0 +1,197 @@
+<!--pages/resourse/index.wxml-->
+<view class="resource_login">
+	<view class="resource_top">
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_03.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				出发地
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindRegionChange" mode="region" value="">
+					<view class="picker">
+						{{start_region}} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_06.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				到达地
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindRegionChange2" mode="region" value="">
+					<view class="picker">
+						{{end_region}} >
+					</view>
+					<!-- <view class="arror">               	
+					 <image src="../images/arror.png">
+					</image> 
+				</view> -->
+				</picker>
+			</view>
+		</view>
+		<view class="depart no_line">
+			<view class="depart_img">
+				<image src="../images/icon_15.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				车长
+			</view>
+			<view class="sectionArea">
+			   <picker bindchange="bindCarLength" mode="selector" range="{{ car_length }}" value="{{ index }}" range-key = "name">
+					<view class="picker">
+						{{ car_length[index].name }} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart no_line">
+			<view class="depart_img">
+				
+			</view>
+			<view class="depart_text">
+				车辆类型
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindCarType" mode="selector" range="{{ car_type }}" value="{{ index2 }}" range-key = "name">
+					<view class="picker">
+						{{ car_type[index2].name }} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+				
+			</view>
+			<view class="depart_text">
+				是否拼车
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindCarPool" mode="selector" range="{{CarPool}}" value="{{index3}}">
+					<view class="picker">
+						{{CarPool[index3]}} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_18.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				货物名称
+			</view>
+			<view class="sectionArea">
+				<input placeholder="请输入货物名称" bindinput = "inputContent" data-id = "cargo_name" placeholder-style="color:#ddd;"></input>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_21.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				货物重量
+			</view>
+			<view class="sectionArea">
+				<view class = "unitInput"><input placeholder="请输入货物重量" bindinput = "inputContent" placeholder-style="color:#ddd;" data-id = "cargo_weight"></input></view>
+				<text class = "unitPrice">吨</text>
+			</view>
+		</view>
+		<view class="depart charge">
+			<view class="depart_img">
+				<image src="../images/icon_25.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				运输费用
+			</view>
+			<view class="sectionArea">
+				<view class = "unitInput"><input placeholder="请输入运费" bindinput = "inputContent" placeholder-style="color:#ddd;" data-id = "transport_cost"></input></view>
+				<text class = "unitPrice unitPriceT">元|吨</text>
+			</view>
+		</view>
+	</view>
+	<!-- <view class='hr'></view> -->
+	<view class="resource_bottom">
+		<view class="depart no_line">
+			<view class="depart_img">
+				<image src="../images/icon_27.png">
+				</image>
+			</view>
+			<view class="depart_text ">
+				装车日期
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindChangeDate" mode="date" value="{{date}}" bindchange="bindDateChange">
+					<view class="picker">
+					   {{date}} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+			</view>
+			<view class="depart_text">
+				装车时间
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindTimeChange" mode="time" value="{{time}}" >
+					<view class="picker">
+						{{time}} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart no_line">
+			<view class="depart_img">
+				<image src="../images/icon_29.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				备注
+			</view>
+			<view class="sectionArea">
+			</view>
+		</view>
+		<view class="textarea_font">
+			<textarea bindinput="inputChange" data-id = "remark" data-index="{{ index }}" maxlength="{{ maxlength }}" placeholder="多行输入" placeholder-style="color:#ddd;" hidden="{{ hidden }}" value="">
+			</textarea>
+			<div class="weui-textarea-counter">
+				<span>
+					{{ length }}
+				</span>
+				/
+				<span>
+					{{ decLength }}
+				</span>
+			</div>
+		</view>
+	</view>
+	<view class="check_agree">
+		<view class="check_box">
+			<checkbox-group bindchange="checkboxChange" data-checks = "{{ checkedStatus }}">
+				<checkbox checked = "{{ checkedStatus }}"></checkbox>
+			</checkbox-group>
+		</view>
+		<view class="check_text">
+			我已阅读并同意平台管理规范
+		</view>
+	</view>
+	<view class = "subBtn">
+		<button bindtap="submit" class="button">
+			确认发布
+		</button>
+	</view>
+</view>

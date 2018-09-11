@@ -1,0 +1,14 @@
+<!--personal/component/index.wxml-->
+<view class="tab-view">
+	<view class="tab-view-menu">
+		<view wx:for = "{{tab_list}}" wx:key = "index" class="tab-view-menu-item {{ tab_item == item ? 'active' : '' }}" bindtap="onTap" data-type="{{item}}">
+			<slot name="switchTabTitle{{ item }}"></slot><!--选项1-->
+		</view>
+	</view>
+	<view class="tab-view-role">
+		<view wx:for = "{{tab_list}}" wx:key = "index" class="tab-view-role-item" wx:if="{{ tab_item == item }}">
+			<slot name="switchTab{{ item }}"></slot>
+		</view>
+	</view>
+</view>
+

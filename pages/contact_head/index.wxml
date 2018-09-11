@@ -1,0 +1,24 @@
+<!--pages/contact_head/index.wxml-->
+<view class='contact_head'>
+	<view class='contact_head_top'>
+		<view class='contact_head_img'>
+			 <image src='{{ item.user_image }}'></image>
+		</view>
+		<view>{{ item.nickname }}</view>
+	</view>
+
+	<view class='contact_head_second'>
+		<view class='contact_head_tel'>
+		联系方式
+		</view>
+
+		<view class='contact_head_tel_con'>
+			{{ item.user_phone }}
+		</view>
+	</view>
+	<view>
+		<button bindtap="makePhone" class="button">
+		   立即联系
+		</button>
+	</view>
+</view>

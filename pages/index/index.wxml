@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<import src="../../utils/wxParse/wxParse.wxml"/>
+<blcok wx:if = "{{ onOff }}">
+	<view class='wrap'>
+		<include src="../common/auth.wxml" />
+		<view class="view-content">
+			<template is="wxParse" data="{{wxParseData:contentlist.nodes}}"/>
+			<!-- {{ agree_terms }} -->
+		</view>
+		<button class="button" bindtap="switchTab" data-url = "/pages/findCar/index">同意条款</button>
+	</view>
+</blcok>

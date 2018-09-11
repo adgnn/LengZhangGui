@@ -1,0 +1,114 @@
+<!--pages/findCar/index.wxml-->
+<view class="Area">
+	<view class="sectionArea">
+		<!-- <view class="section__title picker">起点</view> -->
+		<picker bindchange="bindRegionChange" mode="region" custom-item = "{{ customItem }}" value="起点">
+			<view class="picker">
+				{{ start_region[2] == "全部" && start_region[1] == "全部" ? start_region[0] : start_region[2] == "全部" && start_region[1] == "县" ? start_region[0]+"县" : start_region[2] == "全部" ? start_region[1] : start_region[2] }}
+			</view>
+			<view class="arror">
+				<image src="../images/arror.png"></image>
+			</view>
+		</picker>
+		<!-- <image style="width:0.1rem;height:2rem" src='../images/col_line.png'></image> -->
+	</view>
+	<view class="col_line">
+	</view>
+	<view class="sectionArea">
+		<picker bindchange="bindRegionChange2" custom-item = "{{ customItem }}" mode="region" value="终点">
+			<view class="picker">
+				{{ end_region[2] == "全部" && end_region[1] == "全部" ? end_region[0] : end_region[2] == "全部" && end_region[1] == "县" ? end_region[0]+"县" : end_region[2] == "全部" ? end_region[1] : end_region[2] }}
+			</view>
+			<view class="arror">
+				<image src="../images/arror.png">
+				</image>
+			</view>
+		</picker>
+	</view>
+	<view bindtap="OnClick" class="sectionArea">
+		<view class="picker {{ hide ? 'fontColor' : '' }}">
+			{{ carClassify }}
+		</view>
+		<view class="arror">
+			<image wx:if = "{{ !hide }}" mode = "aspectFit" src="../images/arror.png"></image>
+			<image wx:else mode = "aspectFit" src="../images/arror_03.png"></image>
+		</view>
+	</view>
+	<view class="clearfix">
+	</view>
+</view>
+<view class="carInfo" wx:if="{{ hide }}">
+	<view class="carInfo1">
+		<block wx:for = "{{ carTypeList }}" wx:key = "index">
+			<view data-index = "{{ index }}" bindtap = "selectedCarFill" class = "{{ item.type == 1 ? 'selectedColor' : '' }}">
+				{{ item.name }}
+			</view>
+		</block>
+	</view>
+	<text class = "findCarTitle">
+		车长（米）
+	</text>
+	<view class="carInfo2">
+		<block wx:for="{{ carSize }}" wx:for-item="sizeSon" wx:key="index">
+			<view data-index = "{{ index }}" bindtap = "selectedCarSize" class = "{{ sizeSon.type == 1 ? 'selectedColor' : '' }}">
+				{{ sizeSon.name }}
+			</view>
+		</block>
+	</view>
+	<text class = "findCarTitle">
+		车型
+	</text>
+	<view class="carInfo3">
+		<block wx:for="{{ carType }}" wx:key="index">
+			<view data-index = "{{ index }}" bindtap = "selectedCarType" class = "{{ item.type == 1 ? 'selectedColor' : '' }}">
+				{{ item.name }}
+			</view>
+		</block>
+	</view>
+	<button bindtap="submit" class="button">
+		确定
+	</button>
+</view>
+<view class="findCar">
+	<block wx:for="{{ list }}" wx:key="index" wx:if="{{ !hide }}">
+		<view class="findCar_cont">
+			<view class="findCar_cont_Item findCar_cont_Items">
+				<image src="{{ cargo_image }}" style="width:100%;height:100%;">
+				</image>
+			</view>
+			<view class="findCar_cont_Item Item2">
+				<view class="route">
+					{{ item.start_city == '县' ? item.start_area : item.start_city }}
+					<image src="../images/to.png" style="width:35px;height:7px;"></image>
+					{{ item.end_city == '县' ? item.end_area : item.end_city }}
+				</view>
+				<view class="starWrap">
+					{{ item.cargo_name }}
+				</view>
+				<view class="length">
+					{{ item.car_length }} | {{ item.car_type }}
+				</view>
+				<view class="findCar_Item_weight">
+					<view>
+						{{ item.cargo_weight }}吨
+					</view>
+					<view class="red">
+						{{ item.transport_cost }}￥ | 吨
+					</view>
+				</view>
+			</view>
+			<view bindtap="navigateTo" data-url = "/pages/host/index?id={{ item.id }}" class="findCar_cont_Item Item3">
+				<view style="width:23px;height:30px;">
+					<image src="../images/phone.png" style="width:100%;height:100%;">
+					</image>
+				</view>
+				<text class="contact_p">
+					联系货主
+				</text>
+			</view>
+		</view>
+	</block>
+	<!-- <block wx:if = "{{ list.length == 0 }}">
+		<include src="../common/empty.wxml" />
+	</block> -->
+</view>

@@ -1,0 +1,87 @@
+.userImg {
+	background: white;
+	margin-top: 0.6rem;
+	padding: 0 0.8rem;
+	font-size: 0.85rem;
+	color: #666;
+}
+.identify {
+	border-bottom: 1px solid #eee;
+}
+.identifyTitle {
+	padding: 0.6rem 0;
+}
+.identifyImgs {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 1.2rem;
+}
+.identifyImg01, .identifyImg02 {
+	width: 47%;
+	height: 6rem;
+	overflow: hidden;
+}
+.identifyImg02 {
+	position: relative;
+}
+.close {
+	position: absolute;
+	right: 0.3rem;
+	top: 0.3rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	overflow: hidden;
+}
+.saveBtn {
+	padding: 2rem 0.8rem;
+}
+.saveBtn view {
+	width: 100%;
+	margin: 0 auto;
+	background: #009944;
+	color: white;
+	font-size: 0.95rem;
+	border-radius: 0.2rem;
+	padding: 0.6rem 0;
+	text-align: center;
+}
+/*选项卡样式更改  */
+
+.tabWrap {
+	width: 100%;
+}
+view.component-index--tab-view-role-item {
+	padding: 0;
+}
+view.component-index--tab-view-menu {
+	justify-content: space-between;
+	background: white;
+}
+view.component-index--tab-view-menu>view {
+	width: 50%;
+	background: white;
+	text-align: center;
+	font-size: 0.95rem;
+	color: #747474;
+	padding: 0.7rem 0;
+}
+.tabWrap {
+	width: 100%;
+}
+view.component-index--tab-view-menu-item.component-index--active {
+	color: #009944;
+	background: white;
+	border-bottom: 2px solid #009944;
+}
+/*展示*/
+
+.idImg {
+	width: 100%;
+	height: 9rem;
+}
+.blockImg {
+	padding-bottom: 1.2rem;
+}
+.saveBtn .bgGray {
+	background: #ccc;
+}

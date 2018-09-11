@@ -1,0 +1,36 @@
+page{background: #eee;color:#666;}
+.goods_details{background: #fff;display: flex;align-items: center;}
+.goods_img{margin:0.5rem;}
+ .user_star{width:65%; font-size:0.9rem;}  
+.user_star view{display: inline-block; margin-left:0.3rem;}
+
+/*中间板块*/
+.goods_info{padding:0.5rem;background:#fff;font-size:0.92rem;padding-bottom:4rem;}
+.goods_info_title{margin-top:0.7rem;padding:0.8rem 0.5rem;border-bottom: 1px solid #eee;background:#fff;font-weight: bold;font-size:0.85rem;}
+.goods_info_wrap{margin:0  0 1rem;}
+.remark{display:inline-block;height:100%;overflow: scroll;}
+.goods_info_left{width:30%;display:inline-block;}
+.goods_info_right{width:70%;display:inline-block;}
+button{ 
+    width: 100%;
+    background: #900842;
+    color: #fff;
+    font-size: .95rem;
+    text-align: center;
+    padding:0.4rem 0;
+    border-radius:0;
+}
+
+.starWrap view{
+	display: inline-block;
+	margin:0 0.2rem;
+	width:1.2rem;
+	height:1.2rem;
+	vertical-align:top;
+}
+.payBtn{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}

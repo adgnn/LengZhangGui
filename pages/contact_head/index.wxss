@@ -1,0 +1,16 @@
+/* pages/contact_head/index.wxss */
+page{background:#eee;}
+.contact_head_top{text-align: center;background:#fff;padding: 0.5rem 0;margin-bottom:1rem;color:#666;font-size:1rem}
+.contact_head_img{width:4.3rem;height:4.3rem;margin:0 auto 0.5rem; border-radius:0.2rem; overflow:hidden;}
+.contact_head_second{background: #fff;color:#666; }
+.contact_head_tel{padding:0.5rem;font-size:0.9rem;}
+.contact_head_tel_con{padding:0 0.5rem 0.5rem;font-size:0.83rem;}
+button {
+    width: 90%;
+    background: #900842;
+    color: #fff;
+    margin: 1.5rem auto;
+    font-size: .9rem;
+    text-align: center;
+	padding:0.3rem 0;
+}

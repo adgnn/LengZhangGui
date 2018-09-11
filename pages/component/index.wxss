@@ -1,0 +1,8 @@
+/* 这里的样式只应用于这个自定义组件 */
+.inner {
+	color: red;
+}
+.tab-view{width:100%;}
+.tab-view-menu,.tab-view-role{width:100%;display: flex;}
+.tab-view-menu-item,.tab-view-role-item{padding: 1rem;}
+.tab-view-menu-item.active{background: #ccc;}

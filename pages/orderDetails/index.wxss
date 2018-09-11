@@ -1,0 +1,177 @@
+
+page {
+    margin: 0 0 0.5rem;
+    background: #eee;
+}
+
+/* .col_line{width:1rem；height：1rem;background: #ddd;} */
+.sectionArea {
+    height: 2.5rem;
+    background: #fff;
+    line-height: 2.5rem;
+    border-bottom:0.5rem solid #eee;
+    text-align: right;
+}
+
+.Area { 
+    /*width: 30%;*/
+    text-align: right;
+    height: 2.5rem;
+    background: #fff;
+    display: inline-block;
+    line-height: 2.5rem;
+    margin: 0 2%;
+    text-align: right;
+}
+.picker {
+    display: inline-block;
+    margin: 0 0.2rem;
+    font-size: 0.9rem;
+}
+.arror {
+    display: inline-block;
+    margin: 0 0.2rem;
+    font-size: 0.95rem;
+    width: 10px;
+    height: 5px;
+}
+.arror image {
+    margin-bottom: 0.2rem;
+    width: 100%;
+    height: 100%;
+}
+.clearfix {
+    clear: both;
+}
+.carInfo {
+    font-size: 0.85rem;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+}
+.carInfo1, .carInfo2, .carInfo3 {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.carInfo1>view {
+    width: 30%;
+    border: 1px solid #eee;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    margin: 0.5rem 4% 0 3%;
+}
+/* .carInfo2{display: flex;width:100%;flex-wrap:wrap;} */
+
+.carInfo2>view {
+    width: 20%;
+    border: 1px solid #eee;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0.5rem 0 0 3%;
+}
+/* .carInfo3{display: flex;width:100%;flex-wrap:wrap;} */
+
+.carInfo3>view {
+    width: 20%;
+    border: 1px solid #eee;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0.5rem 0 0 3%;
+}
+button {
+    width: 80%;
+    background: #3492fb;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: .95rem;
+    text-align: center;
+    left: 45%;
+    margin-left: -40%;
+    padding:0.3rem 0;
+}
+/*找车内容  */
+
+.findCar_cont {
+    background: #fff;
+    display: flex;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    align-items: center;
+    padding: 3% 0;
+}
+.findCar_cont_Item {
+    margin: 0 2%;
+    width: 60px;
+    /*height: 60px;*/
+}
+.findCar_cont_Item image {
+    border-radius: 0.5rem;
+}
+.custom_name{font-weight: bold; color:#000;font-size:0.95rem;}
+.route {
+    vertical-align: middle;
+    color: #999;
+    font-size: 0.8rem;
+}
+.route image {
+    margin: 0 0.2rem;
+}
+.Item2 {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-right: 3%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 45%;
+    color: #b7b7b7;
+}
+/*.length, .route, .findCar_Item_weight, .starWrap {
+     margin: 0.12rem 0; 
+}*/
+.findCar_Item_weight {
+    display: flex;
+    width: 60%;
+}
+.red {
+    color: red;
+    margin-left: 15%;
+    font-weight: bold;
+}
+.Item3 {
+    /*display: flex;*/
+    justify-content: space-between;
+    flex-direction: column;
+    width:23%;
+    text-align: right;
+    margin-right: 0;
+}
+.Item3 view {
+    margin: 0 auto;
+}
+.order_details_time{font-size:0.75rem;color:#ddd;}
+.contact_p {
+   
+    font-size: 0.85rem;
+    border:1px solid #3492fb;
+    border-radius:0.1rem;
+    padding:0.3rem; 
+    color: #3492fb;
+}
+.starWrap view {
+    display: inline-block;
+    margin-right: 0.2rem;
+}
+.starWrap image {
+    width: 0.8rem;
+    height: 0.8rem;
+}/* pages/orderDetails/index.wxss */
+
+ .no_border{
+    border:0;
+}

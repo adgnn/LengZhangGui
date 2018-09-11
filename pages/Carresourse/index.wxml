@@ -1,0 +1,141 @@
+<!--pages/Carresourse/index.wxml-->
+<view class="resource_login">
+	<view class="resource_top">
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_03.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				出发地
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindRegionChange" mode="region" value="">
+					<view class="picker">
+						{{start_region}} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_06.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				到达地
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindRegionChange2" mode="region" value="">
+					<view class="picker">
+						{{end_region}} >
+					</view>
+					<!-- <view class="arror">                   
+					 <image src="../images/arror.png">
+					</image> 
+				</view> -->
+				</picker>
+			</view>
+		</view>
+		<view class="depart no_line">
+			<view class="depart_img">
+				<image src="../images/icon_15.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				车长
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindCarLength" mode="selector" range="{{ car_length }}" value="{{ index }}" range-key = "name">
+					<view class="picker">
+						{{ car_length[index].name }} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart no_line">
+			<view class="depart_img">
+			</view>
+			<view class="depart_text">
+				车辆类型
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindCarType" mode="selector" range="{{ car_type }}" value="{{ index2 }}" range-key = "name">
+					<view class="picker">
+						{{ car_type[index2].name }} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart no_line">
+			<view class="depart_img">
+			</view>
+			<view class="depart_text">
+				是否整车
+			</view>
+			<view class="sectionArea">
+				<picker bindchange="bindCarPool" mode="selector" range="{{CarPool}}" value="{{index3}}">
+					<view class="picker">
+						{{CarPool[index3]}} >
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_21.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				货物重量
+			</view>
+			<view class="sectionArea">
+				<view class = "unitInput"><input placeholder="请输入货物重量" bindinput = "inputContent" placeholder-style="color:#ddd;" data-id = "spare_tonne" value = "{{ spare_tonne }}"></input></view>
+				<text class = "unitPrice">吨</text>
+			</view>
+		</view>
+		<view class="depart">
+			<view class="depart_img">
+				<image src="../images/icon_25.png"></image>
+			</view>
+			<view class="depart_text">
+				运输费用
+			</view>
+			<view class="sectionArea">
+				<view class = "unitInput"><input placeholder="请输入运费" bindinput = "inputContent" placeholder-style="color:#ddd;" data-id = "transport_cost" value = "{{ transport_cost }}"></input></view>
+				<text class = "unitPrice unitPriceT">元|吨</text>
+			</view>
+		</view>
+		<view class="depart charge" wx:if = "{{ StartMemberApprove == 1 }}">
+			<view class="depart_img">
+				<image src="../images/icon_30.png">
+				</image>
+			</view>
+			<view class="depart_text">
+				驾照认证
+			</view>
+			<view class="sectionArea authen_license">
+				<view>{{ drive_status == 0 ? "审核中" : drive_status == 1 ? "已认证" : "未认证" }}</view>
+				<view wx:if = "{{ drive_status != 0 && drive_status != 1 }}" class="authen_text" bindtap = "location" data-url = "/pages/upload_img/index?id=2">
+					(点我完成驾照认证）
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- <view class='hr'></view> -->
+	<view class="check_agree">
+		<view class="check_box">
+			<checkbox-group bindchange="checkboxChange" data-checks = "{{ checkedStatus }}">
+				<checkbox checked = "{{ checkedStatus }}"></checkbox>
+			</checkbox-group>
+		</view>
+		<view class="check_text">
+			我已阅读并同意平台管理规范
+		</view>
+	</view>
+	<view class = "subBtn">
+		<button bindtap="submit" class="button">
+			确认发布
+		</button>
+	</view>
+</view>

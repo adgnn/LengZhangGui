@@ -1,0 +1,28 @@
+<!-- 授权获取手机号码 -->
+<view class="auth alertW" wx:if="{{ showWait }}">
+	<view class="alertS">
+		<view class="alertMsg">
+			<view>
+				微信授权
+			</view>
+			<view>
+				申请获取你微信绑定的手机号
+			</view>
+		</view>
+		<button class="alertBut" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击授权</button>
+	</view>
+</view>
+<!-- 授权获取用户信息 -->
+<view class="auth alertW" wx:if="{{ showAuth }}">
+	<view class="alertS">
+		<view class="alertMsg">
+			<view>
+				微信授权
+			</view>
+			<view>
+				申请获取你的头像、昵称等基础信息
+			</view>
+		</view>
+		<button class="alertBut" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击授权</button>
+	</view>
+</view>

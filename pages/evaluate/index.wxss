@@ -1,0 +1,67 @@
+
+.evaluate{
+	background:white;
+	margin-top:0.6rem;
+	padding:0 0.8rem;
+}
+.userInfo{
+	padding:0.6rem 0;
+	border-bottom:1px solid #eee;
+	display: flex;
+	justify-content: space-between;
+}
+.userImg{
+	width:4rem;
+	height:4rem;
+	border-radius:0.2rem;
+	overflow: hidden;
+}
+.userDetail{
+	width:74%;
+	align-self: center;
+	font-size:0.85rem;
+	color:#444;
+}
+.uNameWrap{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:0.5rem;
+}
+.time{
+	align-self: center;
+	font-size:0.75rem;
+	color:#c2c2c2;
+}
+
+.evaluateNumb{
+	padding:0.7rem 0;
+	font-size:0.95rem;
+	color:#444;
+}
+.scoreTitle{
+	margin-right:0.5rem;
+	vertical-align: top;
+}
+.evaluateNumb>view{
+	display: inline-block;
+}
+.scoreStar>view{
+	display: inline-block;
+	width:1.4rem;
+	height:1.4rem;
+	margin:0 0.3rem;
+}
+
+.saveBtn{
+	padding:2rem 0.8rem;
+}
+.saveBtn view{
+	width:100%;
+	margin:0 auto;
+	background:#009944;
+	color:white;
+	font-size:0.95rem;
+	border-radius:0.2rem;
+	padding:0.6rem 0;
+	text-align: center;
+}

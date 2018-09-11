@@ -1,0 +1,61 @@
+.orderStatus,.goodsInfo,.carInfo{
+	background:white;
+	margin-top:0.6rem;
+	border-bottom:1px solid #eee;
+	color:#666;
+}
+.title{
+	border-left:0.1rem solid #3492fb;
+	padding:0.5rem 0.8rem;
+	border-bottom:1px solid #eee;
+	font-size:0.95rem;
+}
+.content{
+	font-size:0.85rem;
+	line-height: 2rem;
+	padding: 0 0.8rem;
+}
+.contentWrap{
+	display: flex;
+}
+.contentWrap>view:first-child{
+	width:30%;
+}
+.contentWrap>view:last-child{
+	width:70%;
+}
+.confirm{
+	background:white;
+	padding:2rem 0.8rem;
+}
+.confirmBtn{
+	position:fixed;
+	left:0; bottom:0;
+	width:100%;
+	color:white;
+	text-align: center;
+	padding:0.7rem 0;
+	background:#009944;
+	font-size:0.95rem;
+}
+.bgGray{
+	background:#ccc;
+}
+.confirmBtnTwo{
+	position:fixed;
+	left:0; right:0;
+	bottom:0;
+	color:white;
+	font-size:0;
+	background:#ff9600;
+}
+.confirmBtnTwo>view{
+	display: inline-block;
+	width:50%;
+	font-size:0.95rem;
+	text-align:center;
+	padding:0.7rem 0;
+}
+.confirmB{
+	background:#009944;
+}

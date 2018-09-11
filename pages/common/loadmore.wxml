@@ -1,0 +1,7 @@
+<view wx:if="{{ hasMore }}" class="load-more">
+	<icon type="waiting" size="16"/>
+	<text>玩命加载中...</text>
+</view>
+<view wx:elif="{{ page > 1 && !hasMore }}" class="load-more">
+	<text>暂无数据</text>
+</view>

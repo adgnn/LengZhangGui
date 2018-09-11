@@ -1,0 +1,17 @@
+.container{
+	background:white;
+	font-size:1.1rem;
+	color:#666;
+	margin-top:0.6rem;
+	text-align: center;
+	padding-bottom:1rem;
+}
+.shareTitle{
+	padding:0.8rem 0 0.2rem;
+}
+.shareImg{
+	display: inline-block;
+	width:12rem;
+	height:12rem;
+	overflow: hidden;
+}

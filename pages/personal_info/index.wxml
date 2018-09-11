@@ -1,0 +1,26 @@
+<view class="container">
+	<view class="userImg">
+		<view class="userHead">
+			<image mode = "aspectFill" src = "{{ user_info.user_image }}"></image>
+		</view>
+	</view>
+	<view class="userInfo">
+		<view class="inputCont">
+			<view class="">昵称</view>
+			<view class="infoInput inputName">
+				<input type = "text" bindinput = "inputContent" placeholder="请输入昵称" placeholder-style = "color:#ededed" data-id = "nickname" value = "{{ user_info.nickname }}" />
+			</view>
+		</view>
+		<view class="inputCont">
+			<view class="">性别</view>
+			<view class="infoInput">{{ user_info.sex == 1 ? "男" : "女" }}</view>
+		</view>
+		<view class="inputCont">
+			<view class="">手机号</view>
+			<view class="infoInput">{{ user_info.user_phone }}</view>
+		</view>
+	</view>
+	<view class="saveBtn">
+		<view bindtap = "save">确认保存</view>
+	</view>
+</view>

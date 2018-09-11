@@ -1,0 +1,40 @@
+<view class="empty" wx:if = "true">
+	<view class="empty-icon">
+		<image src="../images/no_open.png"></image>
+	</view>
+</view>
+<view class="container" wx:else >
+	<view class="money">
+		<view class="moneyTitle">充值金额</view>
+		<view class="payMoney">
+			￥ <input type = "text" placeholder="请输入想要充值的金额" placeholder-style = "color:#999;" data-id = "money" />
+		</view>
+		<view class="sumMoney">余额<text>960.00元</text></view>
+	</view>
+	<view class="discount">
+		<view class="discountTitle">充值优惠</view>
+		<view class="discountDetail">
+			<view class="salesWrap">
+				<view class="salesImg">
+					<image mode = "aspectFit" src = "../images/sales.png" ></image>
+				</view>
+				<view class = "salesRule">
+					<view class="">单次充值100元以上</view>
+					<view class="">立享95折</view>
+				</view>
+			</view>
+			<view class="salesWrap">
+				<view class="salesImg">
+					<image mode = "aspectFit" src = "../images/sales.png" ></image>
+				</view>
+				<view class = "salesRule">
+					<view class="">单次充值500元以上</view>
+					<view class="">立享85折</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="saveBtn">
+		<view>立即充值</view>
+	</view>
+</view>

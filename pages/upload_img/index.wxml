@@ -1,0 +1,73 @@
+<view class="container">
+	<view class = "tabWrap">
+		<!-- 以下是对一个自定义组件的引用 -->
+		<component-tag-name id="onTab" bind:myTab = "_myTab" tab_list="{{[1,2]}}" tab_item = "{{ id }}">
+			<view slot="switchTabTitle1">身份证</view>
+			<view slot="switchTabTitle2">驾驶证</view>
+		</component-tag-name>
+	</view>
+	<view class="userImg">
+		<view class="identify">
+			<view class="identifyTitle">{{ id == 1 ? "身份证正面" : "驾驶证正页" }}</view>
+			<block wx:if = "{{ (id == 1 && (card_status == 0 || card_status == 1)) || (id == 2 && (drive_status == 0 || drive_status == 1)) }}">
+				<view class="blockImg">
+					<view class="idImg">
+						<image mode = "aspectFit" src = "{{ id == 1 ? card_front : drive_front }}"></image>
+					</view>
+				</view>
+			</block>
+			<block wx:else >
+				<view class="identifyImgs">
+					<view class="identifyImg01" bindtap = "uploadId" data-type = "1">
+						<image mode = "aspectFit" src = "../images/upload_img_01.png"></image>
+					</view>
+					<view class="identifyImg02" wx:if = "{{ id == 1 }}">
+						<image mode = "aspectFit" src = "{{ identify_img ? identify_img : '../images/upload_img_02.png' }}"></image>
+						<view class = "close" data-type = "1" bindtap = "closeImg">
+							<image mode = "aspectFit" src = "../images/close_01.png"></image>
+						</view>
+					</view>
+					<view class="identifyImg02" wx:else >
+						<image mode = "aspectFit" src = "{{ car_img ? car_img : '../images/upload_img_02.png' }}"></image>
+						<view class = "close" data-type = "1" bindtap = "closeImg">
+							<image mode = "aspectFit" src = "../images/close_01.png"></image>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+		<view class="identify">
+			<view class="identifyTitle">{{ id == 1 ? "身份证反面" : "驾驶证副页" }}</view>
+			<block wx:if = "{{ (id == 1 && (card_status == 0 || card_status == 1)) || (id == 2 && (drive_status == 0 || drive_status == 1)) }}">
+				<view class="blockImg">
+					<view class="idImg">
+						<image mode = "aspectFit" src = "{{ id == 1 ? card_back : drive_back }}"></image>
+					</view>
+				</view>
+			</block>
+			<block wx:else >
+				<view class="identifyImgs">
+					<view class="identifyImg01" bindtap = "uploadId" data-type = "2">
+						<image mode = "aspectFit" src = "../images/upload_img_01.png"></image>
+					</view>
+					<view class="identifyImg02" wx:if = "{{ id == 1 }}">
+						<image mode = "aspectFit" src = "{{ identify_img_t ? identify_img_t : '../images/upload_img_02.png' }}"></image>
+						<view class = "close" data-type = "2" bindtap = "closeImg">
+							<image mode = "aspectFit" src = "../images/close_01.png"></image>
+						</view>
+					</view>
+					<view class="identifyImg02" wx:else >
+						<image mode = "aspectFit" src = "{{ car_img_t ? car_img_t : '../images/upload_img_02.png' }}"></image>
+						<view class = "close" data-type = "2" bindtap = "closeImg">
+							<image mode = "aspectFit" src = "../images/close_01.png"></image>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="saveBtn" wx:if = "{{ (id == 1 && card_status != 1) || (id == 2 && drive_status != 1) }}">
+		<view class = "bgGray" wx:if = "{{ (id == 1 && card_status == 0) || (id == 2 && drive_status == 0) }}">审核中</view>
+		<view wx:else bindtap = "upImg">上传认证</view>
+	</view>
+</view>
